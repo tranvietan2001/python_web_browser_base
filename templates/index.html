@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Browser</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Simple Browser</h1>
+    <form method="POST">
+        <label for="url">Nhập URL:</label>
+        <input type="text" id="url" name="url" required>
+        <select name="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="HEAD">HEAD</option>
+        </select>
+        <button type="submit">Gửi</button>
+    </form>
+
+    {% if stats %}
+        <h2>Thông tin phân tích:</h2>
+        <p>Chiều dài HTML: {{ stats.length }} ký tự</p>
+        <p>Số thẻ &lt;p&gt;: {{ stats.p_count }}</p>
+        <p>Số thẻ &lt;div&gt;: {{ stats.div_count }}</p>
+        <p>Số thẻ &lt;span&gt;: {{ stats.span_count }}</p>
+        <p>Số thẻ &lt;img&gt;: {{ stats.img_count }}</p>
+    {% endif %}
+    <br></br>
+
+    {% if result %}
+        <h3>Nội dung HTML:</h3>
+        <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; overflow: auto;">
+            {{ result|safe }}
+        </div>
+    {% endif %}
+
+</body>
+</html>
