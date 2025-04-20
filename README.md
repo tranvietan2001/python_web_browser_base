@@ -4,9 +4,10 @@ cài đặt các module sau
     - requests
     - nhập lệnh sau để cài đặt: pip install Flask beautifulsoup4 requests
 
-build/run code
+build/run code -> khởi tạo server requests (thông tin request hiển thị trên terminal)
 Vào trình duyệt bất kỳ rồi nhập địa chỉ sau
     - http://127.0.0.1:5000/
+    -> (client -> nhập url của trang web vào ô -> chọn phương thức -> tìm kiếm -> client sẽ request tới server tải data từ url rồi trả về cho tao)
 
 
 **********************************************
